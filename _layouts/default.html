@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    {% include head.html %}
+ {% include head.html %}
 </head>
-
 
 <body>
 
+	<!--================ Start Header Area =================-->
+	{% include header.html %}
+	<!--================ End Header Area =================-->
 
-    {{ content }}
+	{{ content }}
 
-
-   
+	<!--================Footer Area =================-->
     {% include footer.html %}
-   
-
+	<!--================End Footer Area =================-->
 
     {% include script.html %}
 </body>

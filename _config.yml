@@ -36,10 +36,10 @@ header_pages:
     url: /about
   - title: Contact
     url: /contact
-  - title: Resume
-    url: /resume
-  - title: CV
-    url: /cv
+  - title: Services
+    url: /services
+  - title: Portfolio
+    url: /portfolio
 
 # Build settings
 theme: minima
