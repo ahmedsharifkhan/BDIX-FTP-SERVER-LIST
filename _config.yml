@@ -1,4 +1,3 @@
-
 title: BDIX SERVERS LIST BD ISP
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -19,12 +18,12 @@ url: https://ahmedsharifkhan.github.io # the base hostname & protocol for your s
 # permalink: /:categories/:year/:month/:day/:title
 
 # _config.yml
-# defaults:
-#   - scope:
-#       path: ""
-#       type: "posts"
-#     values:
-#       permalink: "/blog/:title/"
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: "/blog/:title/"
 
 header_pages:
   - title: Home

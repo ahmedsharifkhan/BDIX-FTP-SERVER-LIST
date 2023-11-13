@@ -17,7 +17,7 @@ title: Blog
     </div>
 </section>
 <!--================ End Banner Area =================-->
-    
+
 <!--================Blog Categorie Area =================-->
 <section class="blog_categorie_area section_gap_top">
     <div class="container">
@@ -27,7 +27,9 @@ title: Blog
                     <img src="{{site.baseurl}}/assets/img/blog/cat-post/cat-post-3.jpg" alt="post">
                     <div class="categories_details">
                         <div class="categories_text">
-                            <a href="single-blog.html"><h5>Social Life</h5></a>
+                            <a href="single-blog.html">
+                                <h5>Social Life</h5>
+                            </a>
                             <div class="border_line"></div>
                             <p>Enjoy your social life together</p>
                         </div>
@@ -39,7 +41,9 @@ title: Blog
                     <img src="{{site.baseurl}}/assets/img/blog/cat-post/cat-post-2.jpg" alt="post">
                     <div class="categories_details">
                         <div class="categories_text">
-                            <a href="single-blog.html"><h5>Politics</h5></a>
+                            <a href="single-blog.html">
+                                <h5>Politics</h5>
+                            </a>
                             <div class="border_line"></div>
                             <p>Be a part of politics</p>
                         </div>
@@ -51,7 +55,9 @@ title: Blog
                     <img src="{{site.baseurl}}/assets/img/blog/cat-post/cat-post-1.jpg" alt="post">
                     <div class="categories_details">
                         <div class="categories_text">
-                            <a href="single-blog.html"><h5>Food</h5></a>
+                            <a href="single-blog.html">
+                                <h5>Food</h5>
+                            </a>
                             <div class="border_line"></div>
                             <p>Let the food be finished</p>
                         </div>
@@ -69,7 +75,9 @@ title: Blog
         <div class="row">
             <div class="col-lg-8">
                 <div class="blog_left_sidebar">
-                    <article class="row blog_item">
+
+
+                    <!-- <article class="row blog_item">
                         <div class="col-md-3">
                             <div class="blog_info text-right">
                                 <div class="post_tag">
@@ -96,7 +104,58 @@ title: Blog
                                 </div>
                             </div>
                         </div>
+                    </article> -->
+                    <div id="post-container">
+                    {% for post in site.posts limit: 4 %}
+                    <article class="row blog_item">
+                        <div class="col-md-3">
+                            <div class="blog_info text-right">
+                                <div class="post_tag">
+                                    {% for tag in post.tags %}
+                                    <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag | capitalize }},</a>
+                                    {% endfor %}
+                                </div>
+                                <ul class="blog_meta list">
+                                    <li><a href="#">{{ post.author_name | truncate: 15 }}<i class="lnr lnr-user"></i></a></li>
+                                    <li><a href="#">{{ post.date | date: "%d %b, %Y" }}<i
+                                                class="lnr lnr-calendar-full"></i></a></li>
+                                    <li><a href="#">{{ post.views }} Views<i class="lnr lnr-eye"></i></a></li>
+                                    <li><a href="#">{{ post.comments.size }} Comments<i class="lnr lnr-bubble"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="blog_post">
+                                <img src="{{ post.image }}" alt="{{ post.title }}">
+                                <div class="blog_details">
+                                    <a href="{{ post.url }}">
+                                        <h2>{{ post.title }}</h2>
+                                    </a>
+                                    <p>{{ post.excerpt | strip_html }}</p>
+                                    <a href="{{ post.url }}" class="primary_btn"><span>View More</span></a>
+                                </div>
+                            </div>
+                        </div>
                     </article>
+                    {% endfor %}
+                </div>
+
+
+                <tr id="loadMoreButton">
+                    <td colspan="3">
+                      <button class='btn' hx-get="{{ site.baseurl }}/contacts/?page={{ forloop.index | times: 2 }}"
+                              hx-target="#post-container"
+                              hx-swap="outerHTML"
+                              hx-indicator=".htmx-indicator">
+                        Load More Posts... <img class="htmx-indicator" src="{{ site.baseurl }}/assets/img/bars.svg" alt="Loading">
+                      </button>
+                    </td>
+                  </tr>
+
+                 
+
+
                     <article class="row blog_item">
                         <div class="col-md-3">
                             <div class="blog_info text-right">
@@ -118,8 +177,12 @@ title: Blog
                             <div class="blog_post">
                                 <img src="{{site.baseurl}}/assets/img/blog/main-blog/m-blog-2.jpg" alt="">
                                 <div class="blog_details">
-                                    <a href="single-blog.html"><h2>The Basics Of Buying A Telescope</h2></a>
-                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                                    <a href="single-blog.html">
+                                        <h2>The Basics Of Buying A Telescope</h2>
+                                    </a>
+                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not
+                                        understand why you should have to spend money on boot camp when you can get the
+                                        MCSE study materials yourself at a fraction.</p>
                                     <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
                                 </div>
                             </div>
@@ -146,8 +209,12 @@ title: Blog
                             <div class="blog_post">
                                 <img src="{{site.baseurl}}/assets/img/blog/main-blog/m-blog-3.jpg" alt="">
                                 <div class="blog_details">
-                                    <a href="single-blog.html"><h2>The Glossary Of Telescopes</h2></a>
-                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                                    <a href="single-blog.html">
+                                        <h2>The Glossary Of Telescopes</h2>
+                                    </a>
+                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not
+                                        understand why you should have to spend money on boot camp when you can get the
+                                        MCSE study materials yourself at a fraction.</p>
                                     <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
                                 </div>
                             </div>
@@ -174,8 +241,12 @@ title: Blog
                             <div class="blog_post">
                                 <img src="{{site.baseurl}}/assets/img/blog/main-blog/m-blog-4.jpg" alt="">
                                 <div class="blog_details">
-                                    <a href="single-blog.html"><h2>The Night Sky</h2></a>
-                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                                    <a href="single-blog.html">
+                                        <h2>The Night Sky</h2>
+                                    </a>
+                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not
+                                        understand why you should have to spend money on boot camp when you can get the
+                                        MCSE study materials yourself at a fraction.</p>
                                     <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
                                 </div>
                             </div>
@@ -202,8 +273,12 @@ title: Blog
                             <div class="blog_post">
                                 <img src="{{site.baseurl}}/assets/img/blog/main-blog/m-blog-5.jpg" alt="">
                                 <div class="blog_details">
-                                    <a href="single-blog.html"><h2>Telescopes 101</h2></a>
-                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                                    <a href="single-blog.html">
+                                        <h2>Telescopes 101</h2>
+                                    </a>
+                                    <p>MCSE boot camps have its supporters and its detractors. Some people do not
+                                        understand why you should have to spend money on boot camp when you can get the
+                                        MCSE study materials yourself at a fraction.</p>
                                     <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
                                 </div>
                             </div>
@@ -255,7 +330,9 @@ title: Blog
                             <a href="#"><i class="fa fa-github"></i></a>
                             <a href="#"><i class="fa fa-behance"></i></a>
                         </div>
-                        <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                        <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you
+                            should have to spend money on boot camp when you can get. Boot camps have itssuppor ters
+                            andits detractors.</p>
                         <div class="br"></div>
                     </aside>
                     <aside class="single_sidebar_widget popular_post_widget">
@@ -263,28 +340,36 @@ title: Blog
                         <div class="media post_item">
                             <img src="{{site.baseurl}}/assets/img/blog/popular-post/post1.jpg" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html"><h3>Space The Final Frontier</h3></a>
+                                <a href="single-blog.html">
+                                    <h3>Space The Final Frontier</h3>
+                                </a>
                                 <p>02 Hours ago</p>
                             </div>
                         </div>
                         <div class="media post_item">
                             <img src="{{site.baseurl}}/assets/img/blog/popular-post/post2.jpg" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html"><h3>The Amazing Hubble</h3></a>
+                                <a href="single-blog.html">
+                                    <h3>The Amazing Hubble</h3>
+                                </a>
                                 <p>02 Hours ago</p>
                             </div>
                         </div>
                         <div class="media post_item">
                             <img src="{{site.baseurl}}/assets/img/blog/popular-post/post3.jpg" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html"><h3>Astronomy Or Astrology</h3></a>
+                                <a href="single-blog.html">
+                                    <h3>Astronomy Or Astrology</h3>
+                                </a>
                                 <p>03 Hours ago</p>
                             </div>
                         </div>
                         <div class="media post_item">
                             <img src="{{site.baseurl}}/assets/img/blog/popular-post/post4.jpg" alt="post">
                             <div class="media-body">
-                                <a href="single-blog.html"><h3>Asteroids telescope</h3></a>
+                                <a href="single-blog.html">
+                                    <h3>Asteroids telescope</h3>
+                                </a>
                                 <p>01 Hours ago</p>
                             </div>
                         </div>
@@ -338,27 +423,30 @@ title: Blog
                                     <p>Adventure</p>
                                     <p>44</p>
                                 </a>
-                            </li>															
+                            </li>
                         </ul>
                         <div class="br"></div>
                     </aside>
                     <aside class="single-sidebar-widget newsletter_widget">
                         <h4 class="widget_title">Newsletter</h4>
                         <p>
-                        Here, I focus on a range of items and features that we use in life without
-                        giving them a second thought.
+                            Here, I focus on a range of items and features that we use in life without
+                            giving them a second thought.
                         </p>
                         <div class="form-group d-flex flex-row">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                                    <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
+                                <input type="text" class="form-control" id="inlineFormInputGroup"
+                                    placeholder="Enter email" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Enter email'">
                             </div>
                             <a href="#" class="bbtns">Subcribe</a>
-                        </div>	
-                        <p class="text-bottom">You can unsubscribe at any time</p>	
-                        <div class="br"></div>							
+                        </div>
+                        <p class="text-bottom">You can unsubscribe at any time</p>
+                        <div class="br"></div>
                     </aside>
                     <aside class="single-sidebar-widget tag_cloud_widget">
                         <h4 class="widget_title">Tag Clouds</h4>

@@ -1,8 +1,17 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2023-11-12 16:48:13 +0600
-categories: jekyll update
+layout: blog-post
+username: ahmed-sharif-khan
+author_name: Ahmed Sharif Khan
+author_bio: Web Developer and Blogger
+author_email: jane.doe@email.com
+author_avatar: /assets/authors/jane_doe.jpg
+author_social:
+title:  "Jekyll requires blog post files to be named according to the following format:"
+date:   2023-10-12 17:35:09 +0600
+categories: [Health, Life Style]
+keywords: Health  Travel Life Style
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes
+image: "https://tds-images.thedailystar.net/sites/default/files/styles/very_big_201/public/images/2023/10/03/default_loans_hit_all-time_high_in_bangladesh_0.png"
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
@@ -13,23 +22,6 @@ Jekyll requires blog post files to be named according to the following format:
 Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 
 Jekyll also offers powerful support for code snippets:
-
-```
-http://www.bnet-bd.com
-
-```
-
-```
-https://www.facebook.com/bnetbd
-```
-
-```
-https://www.facebook.com/groups/612490872142952
-```
-
-```
-https://www.facebook.com/ftpbd.net
-```
 
 {% highlight ruby %}
 def print_hi(name)
