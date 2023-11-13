@@ -4,7 +4,7 @@ author_name: Ahmed Sharif Khan Noor
 username: Ahmed-Sharif-Khan-Noor
 author_bio: Digital Marketer and SEO Specialist
 author_email: jane.doe@email.com
-author_avatar: /assets/authors/jane_doe.jpg
+author_pic: "https://lh3.googleusercontent.com/pw/ADCreHfY-Iqm_7M8DLj92fNT9XdBzxeRlQWug_xrqVWCOSPTlal0GHn91oRi5yv37inAb_RLshJwiLXjaLNMbzXuZhySzbYVvOB-_MB9adDvkwoCaA7nwVvzrNtQzQceXu_1x-TDPk2vzSrKXHV1BJnU-dywXA=w480-h480-s-no-gm?authuser=0"
 author_social:
 keywords: Health  Travel Life Style
 title:  "Google Guide line"
@@ -577,4 +577,3 @@ spam score checker
 
 https://www.semrush.com/blog/seo-blog/ 17 seo blog semrush
 
-<iframe src="{{site.baseurl}}/assets/file/TheArtofSEO.pdf" width="100%" height="700px"></iframe>

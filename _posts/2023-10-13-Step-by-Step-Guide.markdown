@@ -4,7 +4,7 @@ username: ahmed-sharif-khan
 author_name: Ahmed Sharif Khan
 author_bio: Web Developer and Blogger
 author_email: jane.doe@email.com
-author_avatar: /assets/authors/jane_doe.jpg
+author_pic: "https://lh3.googleusercontent.com/pw/ADCreHfY-Iqm_7M8DLj92fNT9XdBzxeRlQWug_xrqVWCOSPTlal0GHn91oRi5yv37inAb_RLshJwiLXjaLNMbzXuZhySzbYVvOB-_MB9adDvkwoCaA7nwVvzrNtQzQceXu_1x-TDPk2vzSrKXHV1BJnU-dywXA=w480-h480-s-no-gm?authuser=0"
 author_social:
 title:  "Step-by-Step Guide: Installing Jekyll and Hosting Your Site on GitHub Pages"
 date:   2023-10-12 17:35:09 +0600
