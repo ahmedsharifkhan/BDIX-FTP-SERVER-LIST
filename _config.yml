@@ -12,34 +12,36 @@ start_year: 2023
 current_year: { { site.time | date: "%Y" } }
 
 
-baseurl: "/bdix-ftp-server-list" # the subpath of your site, e.g. /blog
-url: "https://ahmedsharifkhan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+baseurl: /bdix-ftp-server-list # the subpath of your site, e.g. /blog
+url: https://ahmedsharifkhan.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
-permalink: /:categories/:year/:month/:day/:title
+
+# permalink: /:categories/:year/:month/:day/:title
 
 # _config.yml
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      permalink: "/blog/:title/"
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       permalink: "/blog/:title/"
 
 header_pages:
   - title: Home
     url: /
-  - title: Blog
-    url: /blog
   - title: About
-    url: /about
-  - title: Contact
-    url: /contact
+    url: /abouts
   - title: Services
     url: /services
   - title: Portfolio
     url: /portfolio
+  - title: Blog
+    url: /blogs
+  - title: Contact
+    url: /contact
+
+
+
 
 # Build settings
 theme: minima
