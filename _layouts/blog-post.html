@@ -55,42 +55,60 @@ layout: default
                     </div>
 
                 </div>
+
                 <div class="navigation-area">
                     <div class="row">
+                        <!-- Previous Post -->
+                        {% if page.previous %}
                         <div
                             class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                             <div class="thumb">
-                                <a href="#"><img class="img-fluid" src="{{site.baseurl}}/assets/img/blog/prev.jpg"
-                                        alt=""></a>
+                                <a href="{{ site.baseurl }}/{{ page.previous.url }}"><img class="img-fluid" width="60"
+                                        height="60" src="{{ page.previous.image }}" alt=""></a>
                             </div>
                             <div class="arrow">
-                                <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
+                                <a href="{{ site.baseurl }}/{{ page.previous.url }}"><span
+                                        class="lnr text-white lnr-arrow-left"></span></a>
                             </div>
-                            <div class="detials">
+                            <div class="details">
                                 <p>Prev Post</p>
-                                <a href="#">
-                                    <h4>Space The Final Frontier</h4>
+                                <a href="{{ site.baseurl }}/{{ page.previous.url }}">
+                                    <h4>{{ page.previous.title | truncate: 20 }}</h4>
                                 </a>
                             </div>
                         </div>
+                        {% endif %}
+
+                        <!-- Next Post -->
+                        {% if page.next %}
                         <div
                             class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                            <div class="detials">
+                            <div class="details">
                                 <p>Next Post</p>
-                                <a href="#">
-                                    <h4>Telescopes 101</h4>
+                                <a href="{{ site.baseurl }}/{{ page.next.url }}">
+                                    <h4>{{ page.next.title | truncate: 20 }}</h4>
                                 </a>
                             </div>
                             <div class="arrow">
-                                <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
+                                <a href="{{ site.baseurl }}/{{ page.next.url }}"><span
+                                        class="lnr text-white lnr-arrow-right"></span></a>
                             </div>
                             <div class="thumb">
-                                <a href="#"><img class="img-fluid" src="{{site.baseurl}}/assets/img/blog/next.jpg"
-                                        alt=""></a>
+                                <a href="{{ site.baseurl }}/{{ page.next.url }}"><img class="img-fluid" width="60"
+                                        height="60" src="{{ page.next.image }}" alt=""></a>
                             </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
+
+
+
+
+
+
+
+
                 <div class="comments-area">
                     <h4>05 Comments</h4>
                     <div class="comment-list">
@@ -191,7 +209,8 @@ layout: default
                 </div>
                 <div class="comment-form">
                     <h4>Leave a Reply</h4>
-                    <form>
+
+                  <form>
                         <div class="form-group form-inline">
                             <div class="form-group col-lg-6 col-md-6 name">
                                 <input type="text" class="form-control" id="name" placeholder="Enter Name"
@@ -227,18 +246,21 @@ layout: default
                         <div class="br"></div>
                     </aside>
                     <aside class="single_sidebar_widget author_widget">
-                        <img class="author_img rounded-circle" width="50" height="50" src="{{ page.author_pic }}" alt="{{ page.author_name }}">
+                        <img class="author_img rounded-circle" width="50" height="50" src="{{ page.author_pic }}"
+                            alt="{{ page.author_name }}">
+
                         <h4>{{ page.author_name}}</h4>
-                        <p>Senior blog writer</p>
+                        <p>{{page.author_bio}}</p>
                         <div class="social_icon">
+
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-github"></i></a>
                             <a href="#"><i class="fa fa-behance"></i></a>
+                          
                         </div>
-                        <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you
-                            should have to spend money on boot camp when you can get. Boot camps have itssuppor ters
-                            andits detractors.</p>
+                        
+                        <!-- <p>{{page.description}}</p> -->
                         <div class="br"></div>
                     </aside>
                     <aside class="single_sidebar_widget popular_post_widget">
@@ -256,32 +278,25 @@ layout: default
                                 </a>
                                 <p>{{ post.date | date: "%b %-d, %Y" }}</p>
                             </div>
-                    </div>
-                        {% endif %}
-                        {% endfor %}
-                    <div class="br"></div>
-                    </aside>
-                <aside class="single_sidebar_widget ads_widget">
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="br"></div>
+                </aside>
+                <!-- <aside class="single_sidebar_widget ads_widget">
                     <a href="#"><img class="img-fluid" src="{{site.baseurl}}/assets/img/blog/add.jpg" alt=""></a>
                     <div class="br"></div>
-                </aside>
+                </aside> -->
 
 
                 <aside class="single-sidebar-widget tag_cloud_widget">
                     <h4 class="widget_title">Tag Clouds</h4>
                     <ul class="list">
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Architecture</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Food</a></li>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Lifestyle</a></li>
-                        <li><a href="#">Art</a></li>
-                        <li><a href="#">Adventure</a></li>
-                        <li><a href="#">Food</a></li>
-                        <li><a href="#">Lifestyle</a></li>
-                        <li><a href="#">Adventure</a></li>
+                        {% for category in page.categories %}
+                        <li><a href="#">{{ category }}</a></li>
+                        <!-- <li><a href="{{ '/' | relative_url }}{{ site.baseurl }}{{ '/categories/' | append: category | slugify }}/">{{ category }}</a></li> -->
+                        {% endfor %}
+
                     </ul>
                 </aside>
             </div>
